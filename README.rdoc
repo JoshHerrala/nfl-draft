@@ -23,10 +23,10 @@ To reset, navigate to the 'app' directory:
 
 Thats it! fire up the rails server, navigate to the draft section, and start drafting players!
 
-*Know Bugs*
--Team names are being displayed as object references when viewed from Players index
--The drop menu for selecting players is showing all players, including those that have been drafted
--Picking the last draft pick with cause an error.
+*Know Bugs*<br>
+<br>-Team names are being displayed as object references when viewed from Players index
+<br>-The drop menu for selecting players is showing all players, including those that have been drafted
+<br>-Picking the last draft pick with cause an error.
 
 
 Please feel free to use a different markup language if you do not plan to run
