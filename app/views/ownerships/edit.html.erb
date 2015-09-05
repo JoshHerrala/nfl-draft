@@ -1,0 +1,35 @@
+<%= render 'welcome/menu' %>
+
+<body>
+<table class="table1">
+<tr><td>
+<br>
+<%= form_for @ownership do |f| %>
+<p>
+ Round <%= @ownership.round %> of the NFL draft.<br>
+ <% if @ownership.team.logo_file_name == nil %>
+<p></p>
+<% else %>	
+	 <%= image_tag @ownership.team.logo(:large) %>
+<% end %>
+ 
+ 
+ 
+ 
+ 
+
+ <br>
+ The  <%= @ownership.team.name %>'s pick is:
+ 
+<br>
+
+<%= f.collection_select(:player_id, Player.all, :id, :name)%>	
+</p>
+<p>
+<%= f.submit "Select Player"%>
+</p>
+
+<% end %>
+</table>
+</body>
+

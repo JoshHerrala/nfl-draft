@@ -1,0 +1,33 @@
+== README
+
+This app was created by Joshua Herrala as part of a job application process.
+
+Rails 4.2.1
+ruby 2.2.2p95 (2015-04-13 revision 50295)
+
+The 'paperclip' gem is used for file attachments.
+
+The imagemagick suite is used for photo resizing. If you don't have it installed, the NFL team logos might look distorted. Imagemagick can be downloaded here:
+
+http://www.imagemagick.org/script/binary-releases.php
+
+As of 9/5/2015 the app is incomplete, but basic functionality works. There is a bugs list at the bottom of this page.
+
+A rake task, importcsv.rake has been created to import all of the data for the app. Please note that reseting the database and importing the data will wipe out the beautiful icons that I painstakingly added for each team, and thats just a damn shame. All of the logos can be found in a logo folder in the root of the app.
+
+To reset, navigate to the 'app' directory:
+
+1) From the command prompt, type 'rake db:reset'
+
+2) From the command prompt, type 'rake importcsv:all'
+
+Thats it! fire up the rails server, navigate to the draft section, and start drafting players!
+
+*Know Bugs*
+-Team names are being displayed as object references when viewed from Players index
+-The drop menu for selecting players is showing all players, including those that have been drafted
+-Picking the last draft pick with cause an error.
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.

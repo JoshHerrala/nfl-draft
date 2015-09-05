@@ -1,0 +1,51 @@
+
+
+<%= render 'welcome/menu' %>
+<%= render 'ownmenu' %>
+
+
+
+<table class="table1">
+
+  <thead>
+    <tr>
+      <th><h2>Draft</h2></th>
+	  <th>Round</th>
+      <th>Pick Number</th>
+      <th></th>
+	  <th>Team Name</th>
+     
+      <th>Player</th>
+	  <th>Select Player</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ownerships.each do |ownership| %>
+      <tr>
+      <td></td>
+        <td><%= ownership.round %></td>
+        <td><%= ownership.pick %></td>
+        <% if ownership.team.logo_file_name == nil %>
+		<td></td>
+		<% else %>	
+			<td><%= image_tag ownership.team.logo.url(:medium) %></td>
+		<% end %>
+		<td><%= ownership.team.name %></td> 
+       
+		<% if ownership.player_id == nil %>
+		<td>No pick yet</td>
+		<% else %>
+		<td><%= ownership.player.name %></td>
+		<% end %>
+		<% if ownership.pick == Rails.application.config.counter %>
+		<td><%= link_to 'Select Player', edit_ownership_path(ownership) %></td> 
+		<% elsif ownership.pick > Rails.application.config.counter %>
+		<td></td>
+		<% else ownership.pick < Rails.application.config.counter %>
+		<td>Selection Completed
+		<% end %>
+        
+	  </tr>
+    <% end %>
+  </tbody>
+</table>

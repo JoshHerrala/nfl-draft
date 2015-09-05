@@ -1,0 +1,48 @@
+<%= render 'welcome/menu' %>
+<%= render 'ownmenu' %>
+
+
+
+<table class="table1">
+
+  <thead>
+    <tr>
+      <th><h2>Last Three Picks</h2></th>
+       <th></th>
+	  <th>Round</th>
+      <th>Pick Number</th>
+      <th></th>
+	  <th>Team</th>
+      <th>Player</th>
+	 
+    </tr>
+  </thead>
+  <tbody>
+    <% @ownerships.each do |ownership| %>
+      <tr>
+      <% if ownership.pick == Rails.application.config.counter %>
+	  <th>NEXT PICK !</th>
+	  <% else %>
+	  <td></td>
+	  <% end %>
+        <td></td>
+		<td><%= ownership.round %></td>
+        <td><%= ownership.pick %></td>
+        <% if ownership.team.logo_file_name == nil %>
+		<td></td>
+		<% else %>	
+			<td><%= image_tag ownership.team.logo.url(:medium) %></td>
+		<% end %>
+		<td><%= ownership.team.name %></td> 
+      
+	     <% if ownership.player_id == nil %>
+	    <td>Pending</td>
+	    <% else %>
+	    <td><%= ownership.player.name %></td>
+	    <% end %>
+		
+	  </tr>
+    <% end %>
+  </tbody>
+</table>
+

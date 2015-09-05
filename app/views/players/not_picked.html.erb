@@ -1,0 +1,26 @@
+<%= render 'welcome/menu' %>
+<%= render 'player_menu' %>
+
+
+
+<table class="table1">
+  <thead>
+    <tr>
+    <th><h2>Undrafted Players</h2></th>
+      <th>Name</th>
+      <th>Position</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% @players.each do |player| %>
+       <tr>
+       <td></td>
+        <td><%= player.name %></td>
+        <td><%= player.position %></td>
+        
+		
+      </tr>
+    <% end %>
+  </tbody>
+</table>
