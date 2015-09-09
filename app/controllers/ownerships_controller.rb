@@ -1,11 +1,7 @@
 class OwnershipsController < ApplicationController
   
   def index
-    if Rails.application.config.counter == 1
-    @ownerships = Ownership.all
-  else
-    @ownerships = Ownership.all.select { |m| m.pick >= Rails.application.config.counter}
-  end
+    @ownerships = Ownership.all.select { |t| t.player_id == nil}
     
   end
 
@@ -38,7 +34,7 @@ class OwnershipsController < ApplicationController
   
   
   def last_three
-    @ownerships = Ownership.take(Rails.application.config.counter).last(4)  
+    @ownerships = Ownership.all.select { |t| t.player_id != nil}.last(3) | Ownership.all.select { |t| t.player_id == nil}.first(1) 
   end
   
   def show
@@ -54,7 +50,7 @@ class OwnershipsController < ApplicationController
     @ownership = Ownership.find(params[:id])
     
     if @ownership.update(ownership_params)
-      Rails.application.config.counter += 1
+      Rails.application.config.counter = (@ownership.pick + 1)
       redirect_to ownerships_path
     else
       render 'edit'

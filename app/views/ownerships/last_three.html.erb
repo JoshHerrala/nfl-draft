@@ -21,11 +21,12 @@
     <% @ownerships.each do |ownership| %>
       <tr>
       <% if ownership.pick == Rails.application.config.counter %>
-	  <th>NEXT PICK !</th>
-	  <% else %>
+ 	  <th>NEXT PICK !</th>
+ 	  <% else %>
+ 	  <td></td>
+ 	  <% end %>
+	  
 	  <td></td>
-	  <% end %>
-        <td></td>
 		<td><%= ownership.round %></td>
         <td><%= ownership.pick %></td>
         <% if ownership.team.logo_file_name == nil %>

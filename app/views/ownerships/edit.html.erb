@@ -23,7 +23,8 @@
  
 <br>
 
-<%= f.collection_select(:player_id, Player.all, :id, :name)%>	
+	
+<%= f.collection_select(:player_id, Player.all.select { |m| m.team == nil}.sort_by{ |x| x.last_name }, :id, :name)%>
 </p>
 <p>
 <%= f.submit "Select Player"%>
