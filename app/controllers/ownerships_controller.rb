@@ -6,7 +6,7 @@ class OwnershipsController < ApplicationController
   end
 
   def results
-    @ownerships = Ownership.take(Rails.application.config.counter - 1)
+    @ownerships = Ownership.all.select { |t| t.player_id != nil}
   end
   
   def round1
