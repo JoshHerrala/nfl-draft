@@ -9,10 +9,15 @@
 
   <thead>
     <tr>
-      <th><h2>Draft</h2></th>
+      <th><h2>Draft
+	  <% if Rails.application.config.counter == 256 %>
+	  Finished!
+	  <% else %>
+	  <% end %>
+	  </h2></th>
 	  <th>Round</th>
       <th>Pick Number</th>
-      <th></th>
+      <th></th>  
 	  <th>Team Name</th>
      
       <th>Player</th>
@@ -41,7 +46,7 @@
 		<td><%= link_to 'Select Player', edit_ownership_path(ownership) %></td> 
 		<% else %>
 		
-		<td><%= Rails.application.config.counter %></td>
+		<td>Pending</td>
 		
 		<% end %>
         
