@@ -2,7 +2,7 @@ class OwnershipsController < ApplicationController
   
   def index
     @ownerships = Ownership.all.select { |t| t.player_id == nil}
-    
+    Rails.application.config.counter = (256 - Ownership.all.select{ |t| t.player_id == nil}.count)
   end
 
   def results
@@ -50,7 +50,7 @@ class OwnershipsController < ApplicationController
     @ownership = Ownership.find(params[:id])
     
     if @ownership.update(ownership_params)
-      Rails.application.config.counter = (@ownership.pick + 1)
+      #Rails.application.config.counter = (@ownership.pick + 1)
       redirect_to ownerships_path
     else
       render 'edit'

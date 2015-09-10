@@ -40,7 +40,7 @@
 		<% if ownership.pick == (Rails.application.config.counter) %>
 		<td><%= link_to 'Select Player', edit_ownership_path(ownership) %></td> 
 		<% else %>
-		<% ownership.pick > Rails.application.config.counter %>
+		
 		<td><%= Rails.application.config.counter %></td>
 		
 		<% end %>
