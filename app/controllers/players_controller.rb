@@ -7,9 +7,6 @@ class PlayersController < ApplicationController
     @players = Player.all.select { |m| m.team == nil}.sort_by{ |x| [x.position, x.last_name] }
   end
 
-  def show
-    @player = Player.find(params[:id])
-  end
 
 private
 

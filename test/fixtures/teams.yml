@@ -1,9 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  division: MyString
+browns:
+  name: browns
+  division: East
+  logo_file_name: logo.jpg 
 
-two:
-  name: MyString
-  division: MyString
+chargers:
+  name: chargers
+  division: West
+  logo_file_name: logo.jpg
+ 

@@ -2,8 +2,7 @@
 
 This app was created by Joshua Herrala as part of a job application process.
 
-Rails 4.2.1
-ruby 2.2.2p95 (2015-04-13 revision 50295)
+It was built on Rails 4.2.1/ruby 2.2.2p95 (2015-04-13 revision 50295)
 
 The 'paperclip' gem is used for file attachments.
 
@@ -11,25 +10,37 @@ The imagemagick suite is used for photo resizing. If you don't have it installed
 
 http://www.imagemagick.org/script/binary-releases.php
 
-As of 9/5/2015 the app is incomplete, but basic functionality works. There is a bugs list at the bottom of this page.
+The app includes icons for each team. These icons are located in the Logos folder in apps root. An edit page to add logos has been included, but is not linked from inside the app. Each teams edit page can be accessed directly by typing 'http://localhost:3000/teams/1/edit, replacing the team number for each.
 
-A rake task, importcsv.rake has been created to import all of the data for the app. Please note that reseting the database and importing the data will wipe out the beautiful icons that I painstakingly added for each team, and thats just a damn shame. All of the logos can be found in a logo folder in the root of the app.
+Three rake tasks have been included with app
+-importcsv.rake: Imports all of the data from the csv files in the root of the app.
+-draft.rake: Completes the draft process by assigning players to each draft pick.
+-reset.rake: Removes all draft picks so the draft can be reset without a db:reset.
 
-To reset, navigate to the 'app' directory:
+
+Rake Tasks: 
+
+To import the data, open a terminal session, navigate to the 'app' directory:
 
 1) From the command prompt, type 'rake db:reset'
 
 2) From the command prompt, type 'rake importcsv:all'
 
-Thats it! fire up the rails server, navigate to the draft section, and start drafting players!
+3) Restart the app by typing 'rails server'
 
-*Know Bugs*
+To complete the draft, open a terminal session, navigate to the 'app' directory:
 
--Team names are being displayed as object references when viewed from Players index
+1) From the command prompt, type 'rake draft:all'
 
--The drop menu for selecting players is showing all players, including those that have been drafted
+2) Restart the app by typing 'rails server'
 
--Picking the last draft pick will cause an error.
+To reset the draft, open a terminal session, navigate to the 'app' directory:
+
+1) From the command prompt, type 'rake reset:all'
+
+2) Restart the app by typing 'rails server'
+
+
 
 
 

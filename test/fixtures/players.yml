@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  string: MyString
-  position: MyString
+john:
+  name: john			
+  position: QB
 
-two:
-  name: MyString
-  string: MyString
-  position: MyString
+steve:
+  name: steve
+  position: QB
