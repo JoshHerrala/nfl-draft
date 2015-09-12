@@ -1,6 +1,6 @@
 == README
 
-This app was created by Joshua Herrala as part of a job application process.
+This app was created by Joshua Herrala.
 
 It was built on Rails 4.2.1/ruby 2.2.2p95 (2015-04-13 revision 50295)
 
