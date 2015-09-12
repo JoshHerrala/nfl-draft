@@ -12,7 +12,7 @@ http://www.imagemagick.org/script/binary-releases.php
 
 The app includes icons for each team. These icons are located in the 'logos' folder in apps root. An edit page to add logos has been included, but is not linked from inside the app. Including logos was not part of the original assignment. If you would like to add a logo(s) to see how it looks, each teams edit page can be accessed directly by typing 'http://localhost:3000/teams/1/edit, replacing the team number for each.
 
-The method/views/routes of the Ownership model are denormalized for simplicity sake. 
+The method/views/routes of the Ownership model are denormalized for simplicity sake. This is not how I would handle things if there were 'n' numbers of rounds in the NFL draft....but there aren't:D
 
 Three rake tasks have been included with app
 
