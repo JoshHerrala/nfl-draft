@@ -2,7 +2,7 @@ class OwnershipsController < ApplicationController
   
   def index
     @ownerships = Ownership.all.select { |t| t.player_id == nil}
-    Rails.application.config.counter = (256 - Ownership.all.select{ |t| t.player_id == nil}.count)
+    Rails.application.config.counter = (Ownership.all.count - Ownership.all.select{ |t| t.player_id == nil}.count) + 1
   end
 
   def results

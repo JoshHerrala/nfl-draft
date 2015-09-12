@@ -2,12 +2,16 @@ require 'test_helper'
 
 class OwnershipsControllerTest < ActionController::TestCase
   
+  def setup
+      @ownership = ownerships(:one)
+  end 
   
   test "Should retrieve index" do
     get :index
     assert_response :success
   end
   
+  #The results by round methods/views are identical, so only 1 is tested. 
   test "Should retrieve results" do
     get :round1
     assert_response :success
@@ -18,5 +22,15 @@ class OwnershipsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "Should retrieve edit" do
+    get :edit, id: @ownership
+    assert_response :success
+  end
+ 
+  test "Should retrieve update" do
+    patch :update, id: @ownership, ownership: {round: @ownership.round, pick: @ownership.pick,
+      team_id: @ownership.team_id, player_id: @ownership.player_id}
+    assert_redirected_to ownerships_path
+  end
 
 end

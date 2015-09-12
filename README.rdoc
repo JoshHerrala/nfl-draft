@@ -10,17 +10,22 @@ The imagemagick suite is used for photo resizing. If you don't have it installed
 
 http://www.imagemagick.org/script/binary-releases.php
 
-The app includes icons for each team. These icons are located in the Logos folder in apps root. An edit page to add logos has been included, but is not linked from inside the app. Each teams edit page can be accessed directly by typing 'http://localhost:3000/teams/1/edit, replacing the team number for each.
+The app includes icons for each team. These icons are located in the 'logos' folder in apps root. An edit page to add logos has been included, but is not linked from inside the app. Including logos was not part of the original assignment. If you would like to add a logo(s) to see how it looks, each teams edit page can be accessed directly by typing 'http://localhost:3000/teams/1/edit, replacing the team number for each.
+
+The method/views/routes of the Ownership model are denormalized for simplicity sake. 
 
 Three rake tasks have been included with app
+
 -importcsv.rake: Imports all of the data from the csv files in the root of the app.
+
 -draft.rake: Completes the draft process by assigning players to each draft pick.
+
 -reset.rake: Removes all draft picks so the draft can be reset without a db:reset.
 
 
 Rake Tasks: 
 
-To import the data, open a terminal session, navigate to the 'app' directory:
+To import the data, navigate to the 'app' directory:
 
 1) From the command prompt, type 'rake db:reset'
 
@@ -28,17 +33,31 @@ To import the data, open a terminal session, navigate to the 'app' directory:
 
 3) Restart the app by typing 'rails server'
 
-To complete the draft, open a terminal session, navigate to the 'app' directory:
+To complete the draft, navigate to the 'app' directory:
 
 1) From the command prompt, type 'rake draft:all'
 
 2) Restart the app by typing 'rails server'
 
-To reset the draft, open a terminal session, navigate to the 'app' directory:
+To reset the draft, navigate to the 'app' directory:
 
 1) From the command prompt, type 'rake reset:all'
 
 2) Restart the app by typing 'rails server'
+
+
+Model and Controller tests are included.
+
+To launch model tests, navigate to the 'app' directory:
+
+1) From the command prompt, type 'rake test:models'
+
+To launch controller tests, navigate to the 'app' directory:
+
+1) From the command prompt, type 'rake test:controllers'
+
+
+
 
 
 
