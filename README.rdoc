@@ -12,7 +12,7 @@ http://www.imagemagick.org/script/binary-releases.php
 
 The app includes icons for each team. These icons are located in the 'logos' folder in apps root. An edit page to add logos has been included, but is not linked from inside the app. Including logos was not part of the original assignment. If you would like to add a logo(s) to see how it looks, each teams edit page can be accessed directly by typing 'http://localhost:3000/teams/1/edit, replacing the team number for each.
 
-The method/views/routes of the Ownership model are denormalized for simplicity sake. This is not how I would handle things if there were 'n' numbers of rounds in the NFL draft....but there aren't:D
+The method/views/routes of the Ownership model are 'denormalized' for simplicity sake. This is not how I would handle things if there were 'n' numbers of rounds in the NFL draft....but there aren't:D
 
 Three rake tasks have been included with app
 
@@ -25,7 +25,7 @@ Three rake tasks have been included with app
 
 Rake Tasks: 
 
-To import the data, navigate to the 'app' directory:
+To import the data, stop the server and navigate to the 'app' directory:
 
 1) From the command prompt, type 'rake db:reset'
 
@@ -33,13 +33,13 @@ To import the data, navigate to the 'app' directory:
 
 3) Restart the app by typing 'rails server'
 
-To complete the draft, navigate to the 'app' directory:
+To complete the draft, stop the server and navigate to the 'app' directory:
 
 1) From the command prompt, type 'rake draft:all'
 
 2) Restart the app by typing 'rails server'
 
-To reset the draft, navigate to the 'app' directory:
+To reset the draft, stop the server and navigate to the 'app' directory:
 
 1) From the command prompt, type 'rake reset:all'
 
@@ -48,11 +48,11 @@ To reset the draft, navigate to the 'app' directory:
 
 Model and Controller tests are included.
 
-To launch model tests, navigate to the 'app' directory:
+To launch model tests, stop the server and navigate to the 'app' directory:
 
 1) From the command prompt, type 'rake test:models'
 
-To launch controller tests, navigate to the 'app' directory:
+To launch controller tests, stop the server and navigate to the 'app' directory:
 
 1) From the command prompt, type 'rake test:controllers'
 
