@@ -11,9 +11,8 @@ class OwnershipsControllerTest < ActionController::TestCase
     assert_response :success
   end
   
-  #The results by round methods/views are identical, so only 1 is tested. 
-  test "Should retrieve results" do
-    get :round1
+  test "Should retrieve round" do
+    get :round, round: @ownership
     assert_response :success
   end
 

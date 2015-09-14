@@ -30,13 +30,7 @@ Rails.application.routes.draw do
   resources :ownerships do
     get 'last_three', on: :collection
     get 'results', on: :collection
-    get 'round1', on: :collection
-    get 'round2', on: :collection
-    get 'round3', on: :collection
-    get 'round4', on: :collection
-    get 'round5', on: :collection
-    get 'round6', on: :collection
-    get 'round7', on: :collection
+    get "rounds/:round", on: :collection,  to: "ownerships#round", as: :round
     
   end
   

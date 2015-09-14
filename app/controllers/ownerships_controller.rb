@@ -15,34 +15,9 @@ class OwnershipsController < ApplicationController
     @ownerships = Ownership.where.not(player_id: nil)
   end
   
-  def round1
-    @ownerships = Ownership.where(round: 1) 
+  def round
+    @ownerships = Ownership.where(round: params[:round])
   end
-  
-  def round2
-    @ownerships = Ownership.where(round: 2)
-  end
-  
-  def round3
-    @ownerships = Ownership.where(round: 3)
-  end
-  
-  def round4
-    @ownerships = Ownership.where(round: 4)
-  end
-  
-  def round5
-    @ownerships = Ownership.where(round: 5)
-  end
-  
-  def round6
-    @ownerships = Ownership.where(round: 6)
-  end
-  
-  def round7
-    @ownerships = Ownership.where(round: 7)
-  end
-  
   
   def last_three
     @ownerships = Ownership.where.not(player_id: nil).last(3) | Ownership.where(player_id: nil).first(1)
