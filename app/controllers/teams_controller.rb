@@ -23,7 +23,7 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     
     if @team.update(team_params)
-      redirect_to teams_path
+      redirect_to logos_teams_path
     else
       render 'edit'
     end
