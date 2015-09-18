@@ -10,7 +10,7 @@ The imagemagick suite is used for photo resizing. If you don't have it installed
 
 http://www.imagemagick.org/script/binary-releases.php
 
-The app includes icons for each team. These icons are located in the 'logos' folder in apps root. An edit page to add logos has been included, but is not linked from inside the app. Including logos was not part of the original assignment. If you would like to add a logo(s) to see how it looks, each teams edit page can be accessed directly by typing 'http://localhost:3000/teams/1/edit, replacing the team number for each.
+The app includes icons for each team. These icons are located in the 'logos' folder in apps root. There is a separate page to add logos. A link button can be found in the table head on the teams index page. Later this will be expanded to allow the editing of all of a teams attributes. 
 
 
 Three rake tasks have been included with app
