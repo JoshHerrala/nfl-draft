@@ -11,6 +11,11 @@ class TeamsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "Should retrieve logos" do
+    get :logos
+    assert_response :success
+  end
+  
   test "Should retrieve edit" do
     get :edit, id: @team.id
     assert_response :success

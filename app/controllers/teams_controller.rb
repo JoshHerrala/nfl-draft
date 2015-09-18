@@ -15,6 +15,10 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
   end
   
+  def logos
+    @teams = Team.all
+  end
+  
   def update
     @team = Team.find(params[:id])
     
