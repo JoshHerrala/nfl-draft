@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   get 'welcome/index'
   get 'welcome/contact'
+  get 'welcome/admin'
   
   root 'welcome#index'
   # Example of regular route:
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
   
   resources :players do
     get 'not_picked', on: :collection
+    get 'admin_index', on: :collection
   end
   
   
