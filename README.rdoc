@@ -1,6 +1,6 @@
 == README
 
-This app was created by Joshua Herrala.
+This app was created by Joshua Herrala as part of a pre-employement screening process. The specifications for the project can be found in the root of the app in draft.rb. The project specifies that authorization should not be implemented. 
 
 It was built on Rails 4.2.1/ruby 2.2.2p95 (2015-04-13 revision 50295)
 
@@ -10,8 +10,7 @@ The imagemagick suite is used for photo resizing. If you don't have it installed
 
 http://www.imagemagick.org/script/binary-releases.php
 
-The app includes icons for each team. These icons are located in the 'logos' folder in apps root. There is a separate page to add logos. A link button can be found in the table head on the teams index page. Later this will be expanded to allow the editing of all of a teams attributes. 
-
+The app includes icons for each team. These icons are located in the 'logos' folder in the apps root. Logos can be added in the Administration section. 
 
 Three rake tasks have been included with app
 
