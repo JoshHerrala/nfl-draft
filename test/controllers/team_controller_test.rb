@@ -3,7 +3,8 @@ require 'test_helper'
 class TeamsControllerTest < ActionController::TestCase
   
   def setup
-    @team = Team.create(name: "UA Bears", division: "Division A")
+    @team = teams(:browns)
+    #@team = Team.create(name: "UA Bears", division: "Division A")
   end
   
   test "Should retrieve index" do
@@ -24,8 +25,12 @@ class TeamsControllerTest < ActionController::TestCase
   test "Should retrieve show" do
     get :show, id: @team.id
     assert_response :success
-    assert_select 'h2', 'UA Bears'  
+    assert_select 'h2', 'browns'  
   end
 
+  test "Should retrieve update" do
+    patch :update, id: @team, team: {name: @team.name, division: @team.division}
+    assert_redirected_to logos_teams_path
+  end
   
 end

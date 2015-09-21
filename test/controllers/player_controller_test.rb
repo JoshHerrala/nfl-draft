@@ -3,7 +3,8 @@ require 'test_helper'
 class PlayersControllerTest < ActionController::TestCase
   
   def setup
-    @player = Player.create(name: "Bo Jackson", position: "FB")
+    @player = players(:john)
+    #@player = Player.create(name: "Bo Jackson", position: "FB")
   end
   
   test "Should retrieve index" do
@@ -24,6 +25,11 @@ class PlayersControllerTest < ActionController::TestCase
   test "Should retrieve edit" do
     get :edit, id: @player.id
     assert_response :success
+  end
+  
+  test "Should retrieve update" do
+    patch :update, id: @player, player: { name: @player.name, position: @player.position}
+    assert_redirected_to admin_index_players_path
   end
 
 end
