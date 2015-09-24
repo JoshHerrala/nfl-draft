@@ -1,10 +1,15 @@
 class PlayersController < ApplicationController
+  
+  #force the index's togetherby passing in a param.
+  #use the draft round model
+  
   def index
-    @players = Player.all.sort_by{ |x| [x.position, x.last_name] }
+    @players = Player.all.order(position: :asc, surname: :asc)
   end
   
   def not_picked
-    @players = Player.all.select { |m| m.team == nil}.sort_by{ |x| [x.position, x.last_name] }
+    #@players = Player.where(team: nil).order(position: :asc, surname: :asc)
+    @players = Player.joins("LEFT OUTER JOIN ownerships ON ownerships.player_id = players.id").joins("LEFT OUTER JOIN teams ON ownerships.team_id = teams.id").where("teams.id IS NULL").order(position: :asc, surname: :asc)
   end
   
   def admin_index
@@ -29,6 +34,6 @@ class PlayersController < ApplicationController
 private
 
 def player_params
-  params.require(:player).permit(:name, :position)
+  params.require(:player).permit(:name, :surname, :position)
 end
 end

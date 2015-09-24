@@ -16,7 +16,7 @@
     <% @players.each do |player| %>
        <tr>
        <td></td>
-        <td><%= player.name %></td>
+        <td><%= player.full_name %></td>
 		<td><%= player.position %></td>
         <td><%= player.try(:team).try(:name) %> </td> 
   	    

@@ -4,8 +4,8 @@ namespace :importcsv do
 	task :players => :environment do
 		players = CSV.new(File.open(Rails.root.join("players.csv")), headers: true)
 
-		players.each do |player|
-			Player.create!(name: player[0].strip, position: player[1])
+		players.each do |row|
+			Player.create(name: row[0].split(' ')[0], surname: row[0].split(' ')[1], position: row[1])
 		end
 	end
 

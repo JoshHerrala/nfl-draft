@@ -5,7 +5,7 @@ class Player < ActiveRecord::Base
   validates :name, presence: true
   validates :position, presence: true
   
-  def last_name
-    self.name.split(' ')[1]
+  def full_name
+    "#{name} #{surname}"
   end
 end
