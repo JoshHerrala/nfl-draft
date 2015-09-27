@@ -16,7 +16,12 @@ body {
 	padding:1px;
 }
 
-
+div.left {
+	margin-left: auto; 
+	margin-right: auto;
+width: 960px; 
+text-align: left;
+}
 
 div.center {
 	margin-left: auto; 
@@ -24,6 +29,7 @@ div.center {
 width: 960px; 
 text-align: center;
 }
+
 
 /** element defaults **/
 table.table1 {
@@ -361,6 +367,56 @@ nav ul li a:hover {
 	background-color: #C70000;
 	text-decoration: none;
 }
+
+nav.mininav {
+	margin-left: auto; 
+	margin-right: auto;
+width: 960px; 
+height: 30px;
+text-align: left;
+background: black;
+}
+
+nav.mininav ul {
+	height: 30px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav.mininav ul li {
+	float: left;
+	display: block;
+	padding: 0px;
+}
+
+
+nav.mininav ul li a {
+    color: #eee;
+    display: block;
+    font-family: 'Francois One',Arial,sans-serif;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 0px;
+    margin: 0;
+
+    padding: 18px 15px 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+nav.mininav ul li.selected a,
+nav.mininav ul li.selected a:hover { 
+	background-color: #940000;
+	color: #fff; 
+}
+
+nav.mininav ul li a:hover {
+	
+	color: #fff;
+	background-color: #C70000;
+	text-decoration: none;
+}
+
 
 #body {
 	

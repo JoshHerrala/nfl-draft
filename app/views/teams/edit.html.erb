@@ -1,43 +1,37 @@
 <%= render 'welcome/menu' %>
 
-<body>
-<table class="table1">
-<tr><td>
+<div class="left">
 <br>
    <%= form_for @team, :html => {:multipart => true} do |f| %>
     <p>
-    <div class="field">
-    <%= @team.name %><br>
-    </div>
+    
+    <%= @team.name %>
     <br>
 
     <% if @team.logo_file_name == nil %>
-    <p></p>
+    
     <% else %>
     <strong>Current Logo</strong><br>
     <%= image_tag @team.logo.url(:large) %>
-    <%end%>
+  
   		  
-	<br><br>
+	<br>
 	<%= link_to 'Remove Logo', remove_team_logo_path %>
-  	  
-  	<br><br>
+  	<%end%> 
+  	<br>
   	<%= f.label :choose_photo %><br>
   	<%= f.file_field :logo %>
  
     <br>
-    <div class="actions">
+  
     <%= f.submit %>
-    </div>
+    
     </p>
 
     <% end %>
 
-  	<br><br>
+  	<br>
     <%= link_to "Back To Team List", logos_teams_path %>
 
-</table>
-  
-
-</body>
+</div>
 

@@ -1,16 +1,15 @@
 <%= render 'welcome/menu' %>
 
-<table class="table1">
-<tr><td>
+<div class="left">
 
 <%= form_for @player do |f| %>
   <p>
-    <%= f.label :name %><br>
+    <%= f.label 'First Name' %><br>
     <%= f.text_field :name %>
   </p>
  
   <p>
-    <%= f.label :surname %><br>
+    <%= f.label 'Last Name' %><br>
     <%= f.text_field :surname %>
   </p>
   
@@ -24,4 +23,5 @@
   </p>
 <% end %>
 <%= link_to 'Back to Players List', admin_index_players_path %>
-</table>
+
+</div>

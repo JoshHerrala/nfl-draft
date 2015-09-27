@@ -2,7 +2,7 @@ class OwnershipsController < ApplicationController
   
   def index
     @ownerships = Ownership.where(player_id: nil) 
-    #Ineffcient (yet effecitive) eqivalent: Ownership.all.select { |t| t.player_id == nil}
+    #Ineffcient ruby eqivalent: Ownership.all.select { |t| t.player_id == nil}
     
     if Ownership.find_by(player_id: nil) != nil
       Rails.application.config.counter = Ownership.find_by(player_id: nil).id

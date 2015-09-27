@@ -1,36 +1,30 @@
 <%= render 'welcome/menu' %>
 
-<body>
-<table class="table1">
-<tr><td>
+
+<div class="left">
 <br>
-<%= form_for @ownership do |f| %>
+   <%= form_for @ownership do |f| %>
 <p>
- Round <%= @ownership.round %> of the NFL draft.<br>
- <% if @ownership.team.logo_file_name == nil %>
-<p></p>
+   Round <%= @ownership.round %> of the NFL draft.
+ 
+ <br>
+   <% if @ownership.team.logo_file_name == nil %>
+
 <% else %>	
 	 <%= image_tag @ownership.team.logo(:large) %>
 <% end %>
  
- 
- 
- 
- 
-
+ <p>
+    The  <%= @ownership.team.name %>'s pick is:
  <br>
- The  <%= @ownership.team.name %>'s pick is:
- 
-<br>
 
-	
-<%= f.collection_select(:player_id, Player.all.select { |m| m.team == nil}.sort_by{ |x| x.surname }, :id, :full_name)%>
-</p>
-<p>
+<%= f.collection_select(:player_id, Player.joins("LEFT OUTER JOIN ownerships ON ownerships.player_id = players.id").joins("LEFT OUTER JOIN teams ON ownerships.team_id = teams.id").where("teams.id IS NULL").order(surname: :asc), :id, :full_name)%>	
+ <br>
+
 <%= f.submit "Select Player"%>
 </p>
 
 <% end %>
-</table>
-</body>
+</div>
+
 
