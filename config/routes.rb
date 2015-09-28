@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :players do
     get 'not_picked', on: :collection
     get 'admin_index', on: :collection
+    get "positions/:position", on: :collection, to: "players#position", as: :position
   end
   
   

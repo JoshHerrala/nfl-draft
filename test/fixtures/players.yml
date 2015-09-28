@@ -2,8 +2,10 @@
 
 john:
   name: john			
+  surname: smith
   position: QB
 
 steve:
   name: steve
+  surname: jones
   position: QB

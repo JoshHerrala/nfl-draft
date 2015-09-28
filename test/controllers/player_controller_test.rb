@@ -22,6 +22,11 @@ class PlayersControllerTest < ActionController::TestCase
     assert_response :success
   end
   
+  test "Should retrieve position" do
+    get :position, position: @player
+    assert_response :success
+  end
+  
   test "Should retrieve edit" do
     get :edit, id: @player.id
     assert_response :success

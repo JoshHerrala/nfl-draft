@@ -16,6 +16,10 @@ class PlayersController < ApplicationController
     @players = Player.all
   end
   
+  def position
+    @players = Player.where(position: params[:position]).order(surname: :asc)
+  end
+  
   def edit
     @player = Player.find(params[:id])
   end
