@@ -3,6 +3,7 @@ class Player < ActiveRecord::Base
   has_one :ownership
   
   validates :name, presence: true
+  validates :surname, presence: true
   validates :position, presence: true
   
   def full_name

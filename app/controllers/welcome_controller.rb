@@ -8,7 +8,5 @@ class WelcomeController < ApplicationController
   def contact
   end
 
-  def lastthree
-    @ownerships = Ownership.all 
-  end
+  
 end

@@ -18,19 +18,16 @@
        <tr>
        
 	  
-        <td><td><%= player.name %> <%= player.surname %></td></td>
-	        <td><%= player.try(:team).try(:name) %> </td> 
+          <td><%= player.name %> <%= player.surname %></td>
+	      <td><%= player.try(:team).try(:name) %> </td> 
   	    
 			<% if player.try(:team).try(:logo_file_name) == nil %>
 	  	  <td></td>
-	  	  <% else %>
-			<td><%= image_tag player.try(:team).try(:logo).try(:url, :medium) %> </td>
+	  	    <% else %>
+		 <td><%= image_tag player.try(:team).try(:logo).try(:url, :medium) %> </td>
 	      <% end %>
 		  </tr>
 	  
-        
-		
-      </tr>
     <% end %>
   </tbody>
 </table>

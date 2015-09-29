@@ -11,12 +11,17 @@ class TeamsController < ApplicationController
     redirect_to @team
   end
   
+  def logos
+    @teams = Team.all
+  end
+  
   def edit
     @team = Team.find(params[:id])
   end
   
-  def logos
-    @teams = Team.all
+  def show
+    @team = Team.find(params[:id])
+    @players = @team.players
   end
   
   def update
@@ -30,10 +35,7 @@ class TeamsController < ApplicationController
   end
   
   
-  def show
-    @team = Team.find(params[:id])
-    @players = @team.players
-  end
+  
   
   private
   def team_params

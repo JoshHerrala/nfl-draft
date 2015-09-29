@@ -1,7 +1,5 @@
 class PlayersController < ApplicationController
   
-  #force the index's togetherby passing in a param.
-  #use the draft round model
   
   def index
     @players = Player.all.order(position: :asc, surname: :asc)
