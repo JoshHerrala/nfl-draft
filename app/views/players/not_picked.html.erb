@@ -3,7 +3,7 @@
 
 
 
-<table class="table1">
+<table id="tblMain" class="table1">
   <thead>
     <tr>
     <th><h2>Undrafted Players</h2></th>
@@ -16,11 +16,15 @@
     <% @players.each do |player| %>
        <tr>
        <td></td>
-        <td><%= player.full_name %></td>
-        <td><%= player.position %></td>
-        
-		
-      </tr>
-    <% end %>
+       <td><%= player.full_name %></td>
+       <td><%= player.position %></td>
+       </tr>
+    
+	<script type="text/javascript">
+		   rows()
+	</script>
+	
+	
+	<% end %>
   </tbody>
 </table>

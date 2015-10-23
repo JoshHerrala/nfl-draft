@@ -4,7 +4,7 @@
 
 
 
-<table class="table1">
+<table id="tblMain" class="table1">
   <thead>
     <tr>
     <th></th>
@@ -21,12 +21,16 @@
           <td><%= player.name %> <%= player.surname %></td>
 	      <td><%= player.try(:team).try(:name) %> </td> 
   	    
-			<% if player.try(:team).try(:logo_file_name) == nil %>
-	  	  <td></td>
+		  <% if player.try(:team).try(:logo_file_name) == nil %>
+	  	    <td></td>
 	  	    <% else %>
-		 <td><%= image_tag player.try(:team).try(:logo).try(:url, :medium) %> </td>
+		   <td><%= image_tag player.try(:team).try(:logo).try(:url, :medium) %> </td>
 	      <% end %>
 		  </tr>
+		  
+	  	<script type="text/javascript">
+	  		   rows()
+	  	</script>
 	  
     <% end %>
   </tbody>

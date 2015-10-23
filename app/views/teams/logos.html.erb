@@ -3,7 +3,7 @@
 <%= render 'welcome/menu' %>
 <%= render 'welcome/admin_menu' %>
 
-<table class="table1">
+<table id="tblMain" class="table1">
 
   <thead>
     <tr>
@@ -25,10 +25,12 @@
 	  <td></td>
 	  <td><%= team.name %></td>
       <td><%= link_to 'Edit Logo', edit_team_path(team) %></td>
-	
-	  
-     
 	  </tr>
-    <% end %>
+	  
+  	<script type="text/javascript">
+  		   rows()
+  	</script>
+      
+	  <% end %>
   </tbody>
 </table>

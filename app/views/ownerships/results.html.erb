@@ -1,7 +1,7 @@
 <%= render 'welcome/menu' %>
 <%= render 'ownmenu' %>
 
-<table class="table1">
+<table id="tblMain" class="table1">
 
   <thead>
     <tr>
@@ -32,8 +32,11 @@
 	    <% else %>
 	    <td><%= ownership.player.full_name %></td>
 	    <% end %>
-		
 	  </tr>
+  	<script type="text/javascript">
+  		   rows()
+  	</script>
+	  
     <% end %>
   </tbody>
 </table>

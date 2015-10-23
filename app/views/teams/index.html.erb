@@ -2,7 +2,7 @@
 
 <%= render 'welcome/menu' %>
 
-<table class="table1">
+<table id="tblMain" class="table1">
 
   <thead>
     <tr>
@@ -24,13 +24,17 @@
       <%end%>
 	  <td><%= link_to team.name, team %></td>
       <td><%= team.division %></td>
-		
+	 </tr>
 	
-	  
-     
-	  </tr>
-    <% end %>
+	<script type="text/javascript">
+		   rows()
+	</script>
+	
+	 <% end %>
+  
   </tbody>
+	 
 </table>
+
 
 <!-- ><%= button_to 'Edit Logos', logos_teams_path , method: :get %> -->

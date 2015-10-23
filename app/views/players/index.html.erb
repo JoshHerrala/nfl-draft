@@ -2,7 +2,7 @@
 <%= render 'player_menu' %>
 
 
-<table class="table1">
+<table id="tblMain" class="table1">
   <thead>
     <tr>
     <th><h2>All Players</h2></th>
@@ -26,6 +26,12 @@
 		<td><%= image_tag player.try(:team).try(:logo).try(:url, :medium) %> </td>
       <% end %>
 	  </tr>
-    <% end %>
+    
+	<script type="text/javascript">
+		   rows()
+	</script>
+	
+	
+	<% end %>
   </tbody>
 </table>
